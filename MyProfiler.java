@@ -43,11 +43,14 @@ public class MyProfiler<K extends Comparable<K>, V> {
         try {
             int numElements = Integer.parseInt(args[0]);
             MyProfiler<Integer, Integer> myProfile = new MyProfiler<Integer, Integer>();
-            ArrayList<Long> elements = new ArrayList<Long>();
-            for (long i = 0; i < numElements; i++) {
-                elements.add(i); 
+            for(int i = 0; i < numElements; i++) {
+            	myProfile.insert(i, i);
+            	
             }
-           
+            for(int j = 0; j < numElements; j++) {
+            	myProfile.retrieve(j);
+            }
+            
             String msg = String.format("Inserted and retreived %d (key,value) pairs", numElements);
             System.out.println(msg);
         }
